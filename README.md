@@ -1,6 +1,6 @@
 # Awesome Guestbook
 - This is a testing project and serves as a demonstration of my frontend development skills.
-  
+- 🌐 **[Live Demo](https://capek-martin.github.io/awesome-guestbook/)** (https://capek-martin.github.io/awesome-guestbook/)
 ## 📝 Description
 Awesome Guestbook is a simple web application designed to help users keep track of visitors by adding them to a table. It leverages the browser's local storage to retain visitor information, ensuring that data persists even after browser sessions. 
 
