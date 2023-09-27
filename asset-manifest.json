@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/awesome-guestbook/static/css/main.23af0a99.css",
+    "main.js": "/awesome-guestbook/static/js/main.c7461cff.js",
+    "index.html": "/awesome-guestbook/index.html",
+    "main.23af0a99.css.map": "/awesome-guestbook/static/css/main.23af0a99.css.map",
+    "main.c7461cff.js.map": "/awesome-guestbook/static/js/main.c7461cff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.23af0a99.css",
+    "static/js/main.c7461cff.js"
+  ]
+}
