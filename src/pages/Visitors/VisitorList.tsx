@@ -1,21 +1,21 @@
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Chip from "@mui/material/Chip";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../utils/app/store";
+import { RootState } from "../../utils/app/store";
 import { Button, Grid, Paper } from "@mui/material";
-import { useDeleteDialog } from "../hooks/useDeleteDialog";
-import { AlertDialog } from "../components/dialogs/AlertDialog";
+import { useDeleteDialog } from "../../hooks/useDeleteDialog";
+import { AlertDialog } from "../../components/dialogs/AlertDialog";
 import { useState } from "react";
-import { deleteGuestsByIdArr } from "./GuestSlice";
+import { deleteVisitorsByIdArr } from "./VisitorSlice";
 import { toast } from "react-toastify";
 
-export const GuestsList = () => {
+export const VisitorsList = () => {
   const dispatch = useDispatch();
-  const guests = useSelector((state: RootState) => state.guests);
+  const visitors = useSelector((state: RootState) => state.visitors);
   const [selectedIdArr, setSelectedIdArr] = useState<number[]>([]);
 
   /**
-   * Add / remove id from selected guests
+   * Add / remove id from selected visitors
    * @param idArr
    */
   const handleOnSelectionChange = (idArr: number[]) => setSelectedIdArr(idArr);
@@ -34,7 +34,7 @@ export const GuestsList = () => {
   };
 
   const deleteSelected = () => {
-    dispatch(deleteGuestsByIdArr(selectedIdArr));
+    dispatch(deleteVisitorsByIdArr(selectedIdArr));
     toast.success("Selected visitors deleted");
   };
 
@@ -62,7 +62,7 @@ export const GuestsList = () => {
   return (
     <Paper>
       <Grid item xs={12}>
-        {guests.length > 0 && (
+        {visitors.length > 0 && (
           <Button
             variant="contained"
             color="error"
@@ -75,7 +75,7 @@ export const GuestsList = () => {
       </Grid>
       <div style={{ minHeight: "250px", width: "100%" }}>
         <DataGrid
-          rows={guests ?? []}
+          rows={visitors ?? []}
           columns={columns}
           checkboxSelection
           onRowSelectionModelChange={(e: any) => handleOnSelectionChange(e)}
@@ -96,7 +96,7 @@ export const GuestsList = () => {
       <AlertDialog
         open={isDeleteDialogOpen}
         title={"Delete"}
-        content={"Are you sure you want to delete selected guests?"}
+        content={"Are you sure you want to delete selected visitors?"}
         handleClose={cancelDeleteAttempt}
         handleConfirm={handleConfirm}
       />

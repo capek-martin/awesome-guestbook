@@ -1,3 +1,3 @@
 export const storageKeys = {
-  GUESTS: "guests",
+  VISITORS: "visitors",
 };

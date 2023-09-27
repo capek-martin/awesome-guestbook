@@ -1,4 +1,4 @@
-import { Guests } from "../../pages/Guests";
+import { Visitors } from "../../pages/Visitors/Visitors";
 
 export interface AppRoute {
   path: string;
@@ -7,13 +7,13 @@ export interface AppRoute {
 }
 
 export const paths = {
-  GUESTS: "/",
+  VISITORS: "/",
 };
 
 export const routes: AppRoute[] = [
   {
-    path: paths.GUESTS,
-    component: Guests,
+    path: paths.VISITORS,
+    component: Visitors,
     isRestricted: false,
   },
 ];

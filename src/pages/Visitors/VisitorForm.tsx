@@ -12,21 +12,14 @@ import {
 import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Guest } from "../types/Guest.types";
+import { Departments, Visitor } from "../../types/Visitor.types";
 
 interface Props {
   onSubmit: SubmitHandler<any>;
   defaultValues?: any;
 }
 
-enum Departments {
-  marketing = "Marketing",
-  it = "IT",
-  sales = "Sales",
-  management = "Management",
-}
-
-export function GuestForm({ onSubmit, defaultValues }: Props) {
+export function VisitorForm({ onSubmit, defaultValues }: Props) {
   const [agree, setAgree] = useState<boolean>(false);
 
   const {
@@ -35,7 +28,7 @@ export function GuestForm({ onSubmit, defaultValues }: Props) {
     reset,
     watch,
     formState: { errors },
-  } = useForm<Guest>();
+  } = useForm<Visitor>();
   const departmentValue = watch("department", "");
 
   useEffect(() => {

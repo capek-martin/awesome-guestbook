@@ -1,17 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-import guestsReducer from "../../pages/GuestSlice";
 import { storageKeys } from "../core/keys";
+import visitorsReducer from "../../pages/Visitors/VisitorSlice";
 
 const store = configureStore({
   reducer: {
-    guests: guestsReducer,
+    visitors: visitorsReducer,
   },
 });
 
 store.subscribe(() => {
   localStorage.setItem(
-    storageKeys.GUESTS,
-    JSON.stringify(store.getState().guests)
+    storageKeys.VISITORS,
+    JSON.stringify(store.getState().visitors)
   );
 });
 
