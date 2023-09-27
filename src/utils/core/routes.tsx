@@ -7,7 +7,7 @@ export interface AppRoute {
 }
 
 export const paths = {
-  VISITORS: "/",
+  VISITORS: "/awesome-guestbook",
 };
 
 export const routes: AppRoute[] = [

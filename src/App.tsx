@@ -18,7 +18,7 @@ export const App = () => {
       <BrowserRouter>
         <Layout>
           <Routes>
-            {routes.map(({ path, component: Component, isRestricted }) => (
+            {routes.map(({ path, component: Component }) => (
               <Route key={path} path={path} element={<Component />} />
             ))}
           </Routes>
